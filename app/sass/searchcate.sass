@@ -1,0 +1,78 @@
+#searchterm
+    height: 104px
+    background-color: #b3b3b3
+    display: flex
+    form
+        height: 104px
+        padding: 0
+        margin: 0
+        flex: 7
+        display: inline-block
+        margin-left: 174px
+        margin-right: 30px
+    .nav
+        flex: 3
+        height: 104px
+        line-height: 104px
+        width: 174px
+        text-align: center
+        box-sizing: border-box
+        background: url(../assets/images/trgdown.png) 130px 45px no-repeat
+        position: absolute
+        background-size: 30px 16px
+        color: #3b3b3b
+    .trgup
+        background: url(../assets/images/trgup.png) 130px 45px no-repeat !important
+        background-size: 30px 16px !important
+    input:nth-child(1)
+        display: inline-block
+        height: 60px
+        box-sizing: border-box
+        border-radius: 30px
+        margin-top: 22px !important
+        padding-left: 70px
+        width: 100%
+        margin-right: 20px !important
+        background: #fff url(../assets/images/search.png) 20px 12px no-repeat
+        background-size: 32px 32px
+    input:nth-child(2)
+        display: none
+    span
+        display: none
+    .pricestyle
+        input:nth-child(1)
+            display: inline-block
+            height: 60px
+            box-sizing: border-box
+            border-radius: 30px
+            margin-top: 22px !important
+            width: 33%
+            background:#fff !important
+            padding-left: 30px;
+        input:nth-child(2)
+            display: inline-block
+            height: 60px
+            box-sizing: border-box
+            border-radius: 30px
+            margin-top: 22px !important
+            width: 33%
+            padding-left: 30px;
+        span
+            text-align: center
+            border-radius: 20px
+            border: 1px solid #b3b3b3
+            background-color: #fff
+            font-size: 30px
+            display: inline-block
+            padding: 11px 20px 11px 20px
+            margin-left: 30px
+            color: #666
+
+#searchtab
+    .am-tabs-content
+       display: none !important
+    .am-tabs
+        [role=tab] + [role=tab]::before 
+            transform: translate(-96px, 30px) !important
+.tab-hide
+   display: none !important

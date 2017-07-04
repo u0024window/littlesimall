@@ -1,0 +1,28 @@
+{
+    "code": "200",
+    "message": "success",
+    "body": {
+        "list": [
+            {
+                "cate_id": 1,
+                "cate_name": "Air Jordan",
+                "cate_image_url": "/mock/images/logo/jordan.png"
+            },
+            {
+                "cate_id": 2,
+                "cate_name": "NIKE",
+                "cate_image_url": "/mock/images/logo/nike.png"
+            },
+            {
+                "cate_id": 3,
+                "cate_name": "ADIDAS",
+                "cate_image_url": "/mock/images/logo/adidas.png"
+            },
+            {
+                "cate_id": 4,
+                "cate_name": "OTHERS",
+                "cate_image_url": "/mock/images/logo/others.png"
+            }
+        ]
+    }
+}

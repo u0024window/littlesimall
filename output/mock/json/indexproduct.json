@@ -1,0 +1,96 @@
+{
+    "code":"200",
+    "message":"success",
+    "body":{
+          "totalCount": 4,
+        "pageSize": 20,
+        "pageNum": 1,
+        "pageCount": 1,
+        "rows": [
+            {
+                "product_id": 1,
+                "title": "Air Jordan 11 Low BaronAir Jordan 11 Low Baron",
+                "market_price": 50,
+                "vip_price": 30,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 2,
+                "title": "aj4白黑红",
+                "market_price": 49.8,
+                "vip_price": 38.5,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 3,
+                "title": "Air Jordan 11 Low BaronAir Jordan 11 Low Baron",
+                "market_price": 50,
+                "vip_price": 30,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 4,
+                "title": "aj4白黑红",
+                "market_price": 49.8,
+                "vip_price": 38.5,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 11,
+                "title": "Air Jordan 11 Low BaronAir Jordan 11 Low Baron",
+                "market_price": 50,
+                "vip_price": 30,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 21,
+                "title": "aj4白黑红",
+                "market_price": 49.8,
+                "vip_price": 38.5,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 31,
+                "title": "Air Jordan 11 Low BaronAir Jordan 11 Low Baron",
+                "market_price": 50,
+                "vip_price": 30,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 41,
+                "title": "aj4白黑红",
+                "market_price": 49.8,
+                "vip_price": 38.5,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 12,
+                "title": "Air Jordan 11 Low BaronAir Jordan 11 Low Baron",
+                "market_price": 50,
+                "vip_price": 30,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 22,
+                "title": "aj4白黑红",
+                "market_price": 49.8,
+                "vip_price": 38.5,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 32,
+                "title": "Air Jordan 11 Low BaronAir Jordan 11 Low Baron",
+                "market_price": 50,
+                "vip_price": 30,
+                "top_image_url": "/mock/images/shoes.png"
+            },
+            {
+                "product_id": 42,
+                "title": "aj4白黑红",
+                "market_price": 49.8,
+                "vip_price": 38.5,
+                "top_image_url": "/mock/images/shoes.png"
+            }
+        ]
+    }
+}

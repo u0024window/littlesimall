@@ -1,0 +1,26 @@
+{
+    "code": 200,
+    "message": "success",
+    "body": {
+        "list": [
+            {
+                "banner_id": 1,
+                "banner_title": "测试1",
+                "banner_path": "https://zos.alipayobjects.com/rmsportal/IJOtIlfsYdTyaDTRVrLI.png",
+                "resource_link": "www.qq.com"
+            },
+            {
+                "banner_id": 2,
+                "banner_title": "测试2",
+                "banner_path": "https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png",
+                "resource_link": "www.sohu.com"
+            },
+            {
+                "banner_id": 3,
+                "banner_title": "测试3",
+                "banner_path": "https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png",
+                "resource_link": "www.sohu.com"
+            }
+        ]
+    }
+}

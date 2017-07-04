@@ -1,0 +1,49 @@
+{
+    "code": 200,
+    "message": "success",
+    "body": {
+        "product_id": 3,
+        "cate_id": 2,
+        "title": "Nike Air Foamposite Pro…",
+        "product_number": "12",
+        "brief": "日本花王M64",
+        "top_img_path": "/mock/images/shoes.png",
+        "shoes_size": "44",
+        "market_price": 198,				
+        "vip_price": 99,		
+        "color": "橙",
+        "sex": 1,
+        "detailImageList": [
+            {
+                "image_id": 34,
+                "product_id": 9,
+                "image_path": "/mock/images/shoes.png"
+            },
+            {
+                "image_id": 35,
+                "product_id": 10,
+                "image_path": "/mock/images/shoes.png"
+            },
+            {
+                "image_id": 36,
+                "product_id": 11,
+                "image_path": "/mock/images/shoes.png"
+            },
+            {
+                "image_id": 37,
+                "product_id": 12,
+                "image_path": "/mock/images/shoes.png"
+            },
+            {
+                "image_id": 38,
+                "product_id": 13,
+                "image_path": "/mock/images/shoes.png"
+            },
+            {
+                "image_id": 39,
+                "product_id": 14,
+                "image_path": "/mock/images/shoes.png"
+            }
+        ]
+    }
+}
