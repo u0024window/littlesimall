@@ -50,11 +50,10 @@ class Tabcontent extends React.Component {
                     });
                     break;
                 case "3":
-                    //TODO Router
-                    location.hash = "about?type=1"
+                    this.props.history.push("/about/1");
                     break;
                 case "4":
-                    location.hash = "about?type=2"
+                    this.props.history.push("/about/2");
                     break;
 
             }
@@ -79,12 +78,12 @@ class Tabcontent extends React.Component {
             <div>
                 <Tabs defaultActiveKey="1" animated={false} onTabClick={this.handleTabClick}>
                     <TabPane tab="首页" key="1">
-                        <div style={{ display: 'flex', backgroundColor: '#fff' }}>
-                            <ShoesCards productList={this.state.productList} />
+                        <div style={{  backgroundColor: '#fff' }}>
+                            <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
                     <TabPane tab="新品到货" key="2">
-                        <div style={{ display: 'flex', backgroundColor: '#fff' }}>
+                        <div style={{ backgroundColor: '#fff' }}>
                             <ShoesCards productList={this.state.productList} />
                         </div>
                     </TabPane>

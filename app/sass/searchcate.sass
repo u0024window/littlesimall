@@ -2,16 +2,21 @@
     height: 104px
     background-color: #b3b3b3
     display: flex
+    display: box
     form
         height: 104px
         padding: 0
         margin: 0
         flex: 7
+        box-flex: 7
         display: inline-block
         margin-left: 174px
         margin-right: 30px
+    input
+        font-size: 28px
     .nav
         flex: 3
+        box-flex: 3
         height: 104px
         line-height: 104px
         width: 174px
@@ -21,6 +26,7 @@
         position: absolute
         background-size: 30px 16px
         color: #3b3b3b
+        font-size: 28px
     .trgup
         background: url(../assets/images/trgup.png) 130px 45px no-repeat !important
         background-size: 30px 16px !important
@@ -71,8 +77,5 @@
 #searchtab
     .am-tabs-content
        display: none !important
-    .am-tabs
-        [role=tab] + [role=tab]::before 
-            transform: translate(-96px, 30px) !important
 .tab-hide
    display: none !important

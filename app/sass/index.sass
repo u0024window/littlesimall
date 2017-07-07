@@ -1,24 +1,23 @@
 @import './common/common.sass'
 
-#main
-    width: 100%
-    position: absolute
-    top: 0
-    right: 0
+body
     #nav
         height: 104px
         background-color: #3b3b3b
         display: flex
+        display: box
         form
             height: 104px
             padding: 0
             margin: 0
             flex: 8
+            box-flex: 8
             display: inline-block
             margin-left: 104px
             margin-right: 30px
         .nav
             flex: 2
+            box-flex: 2
             padding: 52px 
             box-sizing: border-box
             background: url(../assets/images/nav.png) center no-repeat
@@ -33,6 +32,7 @@
             margin-top: 22px
             padding-left: 70px
             width: 100%
+            font-size: 28px
             margin-right: 20px
             background: #f2f2f2 url(../assets/images/search.png) 20px 12px no-repeat
             background-size: 32px 32px
@@ -44,7 +44,7 @@
     
 #gotop
     display: block
-    position: absolute
+    position: fixed
     bottom: 80px
     right: 20px
     width: 96px

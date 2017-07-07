@@ -24,39 +24,41 @@ class CategoryDisplay extends React.Component {
 
         this.handleTabClick = (key) => {
             productListByAjax.call(this, {
-                sex: key
+                sex: key,
+                cateId:this.props.match.params.type
             });
         }
     }
     componentWillMount() {
         console.log(this)
         productListByAjax.call(this, {
-            sex: 0
+            sex: 0,
+            cateId:this.props.match.params.type
         });
     }
     render() {
         return (<div>
             <section id="catebanner">
-                <img src={this.props.type ? this.state.types[this.props.type][1] : this.state.types[0][1]} alt="" />
-                <img src={this.props.type ? this.state.types[this.props.type][2] : this.state.types[0][2]} alt="" />
-                <span>{this.props.type ? this.state.types[this.props.type][0] : this.state.types[0][0]}</span>
+                <img src={this.props.match.params.type ? this.state.types[this.props.match.params.type][1] : this.state.types[0][1]} alt="" />
+                <img src={this.props.match.params.type ? this.state.types[this.props.match.params.type][2] : this.state.types[0][2]} alt="" />
+                <span>{this.props.match.params.type ? this.state.types[this.props.match.params.type][0] : this.state.types[0][0]}</span>
             </section>
             <section id="displaytab">
                 <Tabs defaultActiveKey="0" animated={true} onTabClick={this.handleTabClick}>
                     <TabPane tab="全部" key="0">
-                        <div style={{ display: 'flex',  backgroundColor: '#fff' }}>
-                            <ShoesCards productList={this.state.productList} />
+                        <div style={{ backgroundColor: '#fff' }}>
+                            <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
                     <TabPane tab="男鞋" key="1">
-                        <div style={{ display: 'flex',  backgroundColor: '#fff' }}>
-                            <ShoesCards productList={this.state.productList} />
+                        <div style={{  backgroundColor: '#fff' }}>
+                            <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
 
                     <TabPane tab="女鞋" key="2">
-                        <div style={{ display: 'flex',  backgroundColor: '#fff' }}>
-                            <ShoesCards productList={this.state.productList} />
+                        <div style={{  backgroundColor: '#fff' }}>
+                            <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
                 </Tabs>
@@ -65,5 +67,5 @@ class CategoryDisplay extends React.Component {
     }
 }
 
-CategoryDisplay.defaultProps={type:'1'};
+CategoryDisplay.defaultProps={type:0};
 export default CategoryDisplay;

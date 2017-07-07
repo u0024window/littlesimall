@@ -1,4 +1,4 @@
 .vscode
 *.zip
 *.log
-node_module
+node_modules

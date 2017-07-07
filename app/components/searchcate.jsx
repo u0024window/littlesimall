@@ -32,9 +32,9 @@ class SearchCate extends React.Component {
             })
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         productListByAjax.call(this,{
-            product_id: this.props.id
+            product_id: this.props.match.params.id
         });
     }
     render() {
@@ -58,7 +58,7 @@ class SearchCate extends React.Component {
                         }
 
                     }}>
-                    <input type="text" ref="productVal1" value={this.state.id}/>
+                    <input type="text" ref="productVal1" />
                     <input type="text" ref="productVal2" />
                     <span onClick={this.searchClick}>搜索</span>
                 </form>
@@ -71,7 +71,7 @@ class SearchCate extends React.Component {
                 </Tabs>
             </section>
             <section>
-                <ShoesCards productList={this.state.productList} />
+                <ShoesCards productList={this.state.productList} {...this.props}/>
             </section>
         </div>)
     }

@@ -20,7 +20,7 @@ class AboutLittleSi extends React.Component {
                 url: _$$.env == "product" ? webRoot + introductInfoApi.url : introductInfoApi.mockUrl ,
                 dataType: 'json',
                 data: {
-                    type: this.props.type
+                    type: this.props.match.params.type
                 }
             }).done((res) => {
                 if (!ajaxSuccess(res)) return;
@@ -35,7 +35,7 @@ class AboutLittleSi extends React.Component {
     }
     componentWillMount() {
         this.setState({
-            currentType:this.props.type
+            currentType:this.props.match.params.type
         })
         this.getContent(this.state.currentType);
         this.handleTabClick = (key) => {
@@ -52,7 +52,7 @@ class AboutLittleSi extends React.Component {
     render() {
         return (<div id="aboutlittlesi">
             <section><img src={require("../assets/images/littlesi.png")} alt="" /></section>
-            <Tabs defaultActiveKey={this.props.type} animated={true} onTabClick={this.handleTabClick}>
+            <Tabs defaultActiveKey={this.props.match.params.type} animated={true} onTabClick={this.handleTabClick}>
                 <TabPane tab="如何购买" key="1">
                     <div ref="buy" dangerouslySetInnerHTML={{__html: this.state.content}} style={{  backgroundColor: '#fff' }}>
                     </div>
@@ -67,7 +67,7 @@ class AboutLittleSi extends React.Component {
 }
 
 AboutLittleSi.defaultProps = {
-    type:1
+    type:"1"
 }
 
 export default AboutLittleSi;

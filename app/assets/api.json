@@ -1,5 +1,5 @@
 {
-    "webRoot":"http://localhost:8080/api_xiaosi",
+    "webRoot":"http://123.58.5.25:8080/api_xiaosi",
     "indexBanner":{
         "type":"post",
         "mockUrl":"/mock/json/indexbanner.json",
@@ -54,7 +54,7 @@
     "productList":{
         "type":"post",
         "mockUrl":"/mock/json/searchprdbyterm.json",
-        "url":"/product/detail",
+        "url":"/product/list",
         "data":{
             "pageSize":1,
             "pageNum":1,

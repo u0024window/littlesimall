@@ -9,12 +9,12 @@ class ShoesCards extends React.Component {
                     //TODO
                         <div className="shoes-card" onClick={((productId)=>{
                                 return ()=>{
-                                    window.location.hash = "productdetail?id="+productId;
+                                    this.props.history.push("/productdetail/"+productId)
                                 }
                             })(dataItem.productId)} key={dataItem.productId+new Date()}>
                             <div><img src={dataItem.imgSrc} alt="" /></div>
                             <div>{dataItem.title}</div>
-                            <div><span>¥</span><span style={{ color: "#ff4b49" }}>{dataItem.price}</span></div>
+                            <div><span style={{ color: "#454545" }}>¥</span><span style={{ color: "#ff4b49" }}>{dataItem.price}</span></div>
                         </div>
                 ))}
             </div>

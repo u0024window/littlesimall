@@ -3,8 +3,9 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from "clean-webpack-plugin";
 
-const extractCss = new ExtractTextPlugin('[name].css')
+const extractCss = new ExtractTextPlugin('[hash:4][name].css')
 
 export default {
     context: path.resolve(__dirname, '.'),
@@ -13,7 +14,7 @@ export default {
     },
     output: {
         path: path.resolve(__dirname, 'output'),
-        filename: '[name].bunld.js',
+        filename: '[name].[hash:4]bunld.js',
     },
 
     module: {
@@ -27,21 +28,21 @@ export default {
                 test: /\.css$/,
                 use: extractCss.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader']
+                    use: ['css-loader','postcss-loader']
                 })
             },
             {
                 test: /\.(scss|sass)$/,
                 use: extractCss.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
+                    use: ['css-loader','postcss-loader', 'sass-loader',]
                 })
             },
             {
                 test: /\.less$/,
                 use: extractCss.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'less-loader']
+                    use: ['css-loader', 'postcss-loader','less-loader',]
                 })
             },
             {
@@ -90,7 +91,10 @@ export default {
         //     compress: {
         //         warnings: true
         //     }
-        // })
+        // }),
+        new CleanWebpackPlugin(['output'],{
+            exclude:['mock']
+        })
         ]
 
 }

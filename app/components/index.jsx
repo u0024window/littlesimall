@@ -32,7 +32,8 @@ class IndexCom extends React.Component {
                 if (!ajaxSuccess(res)) return;
                 const category = res.body.list.map((val, index) => ({
                     cateName: val.cate_name,
-                    catePic: val.cate_image_url
+                    catePic: val.cate_image_url,
+                    cateId:val.cate_id
                 }));
                 this.setState({
                     category: category
@@ -50,7 +51,9 @@ class IndexCom extends React.Component {
             if (!ajaxSuccess(res)) return;
             const category = res.body.list.map((val, index) => ({
                 cateName: val.cate_name,
-                catePic: val.cate_image_url
+                catePic: val.cate_image_url,
+                cateId:val.cate_id
+
             }));
             this.setState({
                 category: category
@@ -68,7 +71,7 @@ class IndexCom extends React.Component {
                     arrow="horizontal"
                     key={index}
                     onClick={() => {
-                        window.location.hash = 'categorydisplay?type=' + index;
+                        this.props.history.push('categorydisplay/' + index);
                     }}
                 >{i.cateName}</List.Item>);
             })}
@@ -77,7 +80,6 @@ class IndexCom extends React.Component {
         const drawerProps = {
             open: this.state.open,
             position: this.state.position,
-            // docked:true
         };
 
 
@@ -97,13 +99,13 @@ class IndexCom extends React.Component {
                     <form action="#" 
                         onSubmit={(e)=>{
                             e.preventDefault();
-                            window.location.hash = 'searchcate?id=' + this.refs.productVal1.value;
+                            this.props.history.push('searchcate/' + this.refs.productVal1.value)
                         }}>
                     <input type="text" ref="productVal1"/>
                     </form>
                 </div>
                 <CarouselCom />
-                <TabContent />
+                <TabContent {...this.props}/>
             </Drawer>
         </div>)
     }

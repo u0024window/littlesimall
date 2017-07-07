@@ -1,13 +1,11 @@
 .am-tabs
     [role=tab]
         color: #b3b3b3 !important
+    [role=tab]+[role=tab]
+        background: url(../../assets/images/border.png) 0 26px no-repeat
+        background-size: 2px 35px
+
     .am-tabs-ink-bar
         display: none !important
     .am-tabs-tab-active
         color: #454545 !important
-[role=tab]+[role=tab]::before
-    content: "";
-    width: 2px;
-    background: #b3b3b3;
-    height: 34%;
-    transform: translate(-30px,30px)
