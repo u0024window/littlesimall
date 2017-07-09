@@ -8,6 +8,9 @@ mobile mall 为小思鞋店 微信公众号开发
 ## 调试工具
 * spy-debugger: https://github.com/wuchangming/spy-debugger
 * 微信web开发工具
+## 环境搭建
+* node安装，[https://nodejs.org/en/](https://nodejs.org/en/)
+* 安装node依赖，npm i
 ## 本地开发
 ### npm start
 webpack-dev-server --open
