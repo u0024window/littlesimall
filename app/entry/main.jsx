@@ -9,9 +9,13 @@ ReactDom.render(
     <Switch>
     <Route exact path="/" component={IndexCom} />
     <Route path="/about/:type" component={AboutLittleSi} />
-    <Route path="/searchcate/:id" component={SearchCate} />
+    <Route path="/searchcate" component={SearchCate} />
     <Route path="/categorydisplay/:type" component={CategoryDisplay} />
     <Route path="/productdetail/:id" component={ProductDetail} />
     </Switch>
- </HashRouter>
-, document.querySelector("body"))
+  </HashRouter>
+, document.querySelector("#main"));
+
+window.onresize = ()=>{
+    document.body.style.fontSize = (document.body.clientWidth*32)/750;
+  };

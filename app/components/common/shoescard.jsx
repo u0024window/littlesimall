@@ -6,8 +6,8 @@ class ShoesCards extends React.Component {
         return (
             <div id="shoes-card" ref="shoescard">
                 {this.props.productList.map((dataItem, index) => (
-                    //TODO
                         <div className="shoes-card" onClick={((productId)=>{
+                                
                                 return ()=>{
                                     this.props.history.push("/productdetail/"+productId)
                                 }

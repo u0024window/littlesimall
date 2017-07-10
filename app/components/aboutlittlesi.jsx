@@ -1,8 +1,8 @@
-import { introductInfo as introductInfoApi,webRoot } from '../assets/api.json';
+import { introductInfo as introductInfoApi, webRoot } from '../assets/api.json';
 import { Tabs, WhiteSpace } from "antd-mobile";
 import '../sass/changeantdstyle/tabs.sass';
 import '../sass/aboutlittlesi.sass';
-import { ajaxSuccess, ajaxFail,_$$} from '../js/publicmethod.js';
+import { ajaxSuccess, ajaxFail, _$$ } from '../js/publicmethod.js';
 
 const TabPane = Tabs.TabPane;
 
@@ -10,17 +10,17 @@ class AboutLittleSi extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentType:1,
+            currentType: 1,
             content: "",
-            types:["buy","about"]
+            types: ["buy", "about"]
         }
-        this.getContent = () => {
+        this.getContent = (type) => {
             $.ajax({
                 type: _$$.env == "product" ? "post" : "get",
-                url: _$$.env == "product" ? webRoot + introductInfoApi.url : introductInfoApi.mockUrl ,
+                url: _$$.env == "product" ? webRoot + introductInfoApi.url : introductInfoApi.mockUrl,
                 dataType: 'json',
                 data: {
-                    type: this.props.match.params.type
+                    type: type
                 }
             }).done((res) => {
                 if (!ajaxSuccess(res)) return;
@@ -32,33 +32,35 @@ class AboutLittleSi extends React.Component {
             });
 
         }
-    }
-    componentWillMount() {
-        this.setState({
-            currentType:this.props.match.params.type
-        })
-        this.getContent(this.state.currentType);
         this.handleTabClick = (key) => {
-            switch (key){
-                case 1:
+            switch (key) {
+                case "1":
+                    console.log(this)
                     this.getContent(1);
                     break;
-                case 2:
+                case "2":
                     this.getContent(2);
                     break;
             }
         }
     }
+    componentWillMount() {
+        this.setState({
+            currentType: this.props.match.params.type
+        })
+        this.getContent(this.state.currentType);
+
+    }
     render() {
         return (<div id="aboutlittlesi">
             <section><img src={require("../assets/images/littlesi.png")} alt="" /></section>
-            <Tabs defaultActiveKey={this.props.match.params.type} animated={true} onTabClick={this.handleTabClick}>
+            <Tabs defaultActiveKey={this.props.match.params.type} animated={true} onTabClick={this.handleTabClick} swipeable={false} destroyInactiveTabPane={false}>
                 <TabPane tab="如何购买" key="1">
-                    <div ref="buy" dangerouslySetInnerHTML={{__html: this.state.content}} style={{  backgroundColor: '#fff' }}>
+                    <div ref="buy" dangerouslySetInnerHTML={{ __html: this.state.content }} style={{ backgroundColor: '#fff' }}>
                     </div>
                 </TabPane>
                 <TabPane tab="关于小思" key="2">
-                    <div ref="about" dangerouslySetInnerHTML={{__html: this.state.content}} style={{ backgroundColor: '#fff' }}>
+                    <div ref="about" dangerouslySetInnerHTML={{ __html: this.state.content }} style={{ backgroundColor: '#fff' }}>
                     </div>
                 </TabPane>
             </Tabs>
@@ -67,7 +69,7 @@ class AboutLittleSi extends React.Component {
 }
 
 AboutLittleSi.defaultProps = {
-    type:"1"
+    type: "1"
 }
 
 export default AboutLittleSi;

@@ -44,20 +44,20 @@ class CategoryDisplay extends React.Component {
                 <span>{this.props.match.params.type ? this.state.types[this.props.match.params.type][0] : this.state.types[0][0]}</span>
             </section>
             <section id="displaytab">
-                <Tabs defaultActiveKey="0" animated={true} onTabClick={this.handleTabClick}>
+                <Tabs defaultActiveKey="0" animated={true} onTabClick={this.handleTabClick} swipeable={false} destroyInactiveTabPane={false}>
                     <TabPane tab="全部" key="0">
-                        <div style={{ backgroundColor: '#fff' }}>
+                        <div style={{ backgroundColor: '#fff' , justifyContent: 'left'}}>
                             <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
                     <TabPane tab="男鞋" key="1">
-                        <div style={{  backgroundColor: '#fff' }}>
+                        <div style={{  backgroundColor: '#fff',justifyContent: 'left' }}>
                             <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
 
                     <TabPane tab="女鞋" key="2">
-                        <div style={{  backgroundColor: '#fff' }}>
+                        <div style={{  backgroundColor: '#fff', justifyContent: 'left' }}>
                             <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>

@@ -45,7 +45,7 @@ function productListByAjax(data){
             });
 }
 const _$$ = {
-    env:"producto"
+    env:"product"
 }
 export {
     ajaxSuccess,

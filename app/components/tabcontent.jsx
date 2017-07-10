@@ -42,8 +42,6 @@ class Tabcontent extends React.Component {
                         data: newProductApi.data
                     }).done((res) => {
                         if (!ajaxSuccess(res)) return;
-                        //TODO
-                        console.log(newProductApi,"success")
                         getProductList.call(this, res.body.rows);
                     }).fail((xhr, text, errorThrow) => {
                         ajaxFail(xhr, text, errorThrow);
@@ -76,14 +74,15 @@ class Tabcontent extends React.Component {
 
         return (
             <div>
-                <Tabs defaultActiveKey="1" animated={false} onTabClick={this.handleTabClick}>
+                <Tabs defaultActiveKey="1" animated={false} onTabClick={this.handleTabClick} 
+                    swipeable={false} destroyInactiveTabPane={false}>
                     <TabPane tab="首页" key="1">
-                        <div style={{  backgroundColor: '#fff' }}>
+                        <div style={{  backgroundColor: '#fff' , alignContent: 'flex-start'}}>
                             <ShoesCards productList={this.state.productList} {...this.props}/>
                         </div>
                     </TabPane>
                     <TabPane tab="新品到货" key="2">
-                        <div style={{ backgroundColor: '#fff' }}>
+                        <div style={{ backgroundColor: '#fff' ,alignContent: 'flex-start'}}>
                             <ShoesCards productList={this.state.productList} />
                         </div>
                     </TabPane>

@@ -47,7 +47,6 @@ class CarouselShoes extends React.Component {
                 className="carousel-shoes"
             >
                 {this.state.data.map((ii,index)=> (
-                    //TODO
                     <a href="javascript:void(0)" key={index+'CarouselShoes'} onClick={((id)=>{
                             return ()=>window.location.hash = "productdetail?id="+id
                         })(ii.id)} style={{height:this.state.initialHeight}}>

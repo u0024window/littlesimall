@@ -33,9 +33,7 @@ class SearchCate extends React.Component {
         }
     }
     componentDidMount() {
-        productListByAjax.call(this,{
-            product_id: this.props.match.params.id
-        });
+        productListByAjax.call(this,{});
     }
     render() {
         return (<div>
@@ -77,7 +75,4 @@ class SearchCate extends React.Component {
     }
 }
 
-SearchCate.defaultProps = {
-    id: 1
-}
 export default SearchCate;

@@ -14,16 +14,16 @@ class ProductDetail extends React.Component {
             }
         }
         this.HowClick = ()=>{
-            window.location.hash = "about?type=1";
+            this.props.history.push("/about/1");
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         $.ajax({
             type:  _$$.env == "product" ? "post" : "get",
             url: _$$.env == "product" ? webRoot + productDetailApi.url :  productDetailApi.mockUrl,
             dataType: 'json',
             data:{
-                product_id:this.props.id
+                product_id:this.props.match.params.id
             }
         }).done((res) => {
             if (!ajaxSuccess(res)) return;
