@@ -18,46 +18,57 @@ class SearchCate extends React.Component {
         this.handleTabClick = (key) => {
             this.setState({
                 currentType: key,
+                showTabPane: !this.state.showTabPane
             });
         };
-        this.searchClick = ()=>{
-            productListByAjax.call(this,{
-                price1: this.refs.productVal1.value,
-                price2: this.refs.productVal2.value,
+        this.searchClick = () => {
+            productListByAjax.call(this, {
+                price1: this.refs.productVal2.value,
+                price2: this.refs.productVal3.value,
             });
         }
-        this.TabPaneClick = ()=>{
+        this.TabPaneClick = () => {
             this.setState({
                 showTabPane: !this.state.showTabPane
             })
         }
+        this.handleSubmit = (e) => {
+            e.preventDefault();
+            switch (this.state.currentType*1) {
+                case 0:
+                    productListByAjax.call(this, {
+                        product_name: this.refs.productVal1.value
+                    });
+                    break;
+                case 1:
+                    productListByAjax.call(this, {
+                        shoes_size: this.refs.productVal1.value
+                    });
+                    break;
+            }
+
+        }
     }
     componentDidMount() {
-        productListByAjax.call(this,{});
+        productListByAjax.call(this, {});
+        let h = window.innerHeight;
+        $("input").focus(()=>{
+            $('body').height(h);
+        }).blur(()=>{
+            setTimeout(()=>{
+                $('body').height("auto");
+            },100)
+        })
     }
     render() {
         return (<div>
             <section id="searchterm" >
-                <div className={this.state.showTabPane ? "nav trgup" : "nav"} ref="nav"onClick={this.TabPaneClick}>{this.types[this.state.currentType]} </div>
-                <form action="#" className={this.state.currentType == 2 ? "pricestyle" : ""}
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        switch (this.state.currentType) {
-                            case 0:
-                                productListByAjax.call(this,{
-                                    product_id: this.refs.productVal1.value
-                                });
-                                break;
-                            case 1:
-                                productListByAjax.call(this,{
-                                    size: this.refs.productVal1.value
-                                });
-                                break;
-                        }
-
-                    }}>
+                <div className={this.state.showTabPane ? "nav trgup" : "nav"} ref="nav" onClick={this.TabPaneClick}>{this.types[this.state.currentType]} </div>
+                <form action="" onSubmit={this.handleSubmit} className={this.state.currentType>1 ? "tab-hide" : "cate-size"}>
                     <input type="text" ref="productVal1" />
-                    <input type="text" ref="productVal2" />
+                </form>
+                <form action="" className={this.state.currentType>1 ? "pricestyle" : "tab-hide"} onSubmit={this.handleSubmit}>
+                    <input type="number" ref="productVal2" /><div></div><input type="number" ref="productVal3" />
                     <span onClick={this.searchClick}>搜索</span>
                 </form>
             </section>
@@ -69,7 +80,7 @@ class SearchCate extends React.Component {
                 </Tabs>
             </section>
             <section>
-                <ShoesCards productList={this.state.productList} {...this.props}/>
+                <ShoesCards productList={this.state.productList} {...this.props} />
             </section>
         </div>)
     }

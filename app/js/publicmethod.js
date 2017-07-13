@@ -5,16 +5,12 @@ function ajaxSuccess(res){
          alert(res.message);
          return false;
     }
-    //TODO
-    console.log(res)
     return true;
 }
 
 function ajaxFail(xhr,text,errorThrow){
     let _xhr = JSON.stringify(xhr);
-    //TODO
     const errorMsg = `xhr:${_xhr}\ntext:${text}\nerrorThrow:${errorThrow}`;
-    console.log(errorMsg);
     return;
 }
 
@@ -40,6 +36,7 @@ function productListByAjax(data){
             }).done((res) => {
                 if (!ajaxSuccess(res)) return;
                 getProductList.call(this, res.body.rows);
+                $("input").blur();
             }).fail((xhr, text, errorThrow) => {
                 ajaxFail(xhr, text, errorThrow);
             });

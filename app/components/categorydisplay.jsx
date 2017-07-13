@@ -30,7 +30,6 @@ class CategoryDisplay extends React.Component {
         }
     }
     componentWillMount() {
-        console.log(this)
         productListByAjax.call(this, {
             sex: 0,
             cateId:this.props.match.params.type

@@ -35,7 +35,6 @@ class AboutLittleSi extends React.Component {
         this.handleTabClick = (key) => {
             switch (key) {
                 case "1":
-                    console.log(this)
                     this.getContent(1);
                     break;
                 case "2":

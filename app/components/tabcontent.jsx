@@ -83,7 +83,7 @@ class Tabcontent extends React.Component {
                     </TabPane>
                     <TabPane tab="新品到货" key="2">
                         <div style={{ backgroundColor: '#fff' ,alignContent: 'flex-start'}}>
-                            <ShoesCards productList={this.state.productList} />
+                            <ShoesCards productList={this.state.productList} {...this.props} />
                         </div>
                     </TabPane>
 
